@@ -12,8 +12,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-// require("./app/routing/apiRoutes")(app);
-// require("./app/routing/htmlRoutes")(app);
+var routes = require("./controllers/burgersController.js");
+
+app.use(routes);
+
 app.listen(PORT, function(){
     console.log("Server lIstening on http://localhost:" + PORT);
 });
