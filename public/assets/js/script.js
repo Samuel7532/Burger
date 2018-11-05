@@ -42,19 +42,19 @@ $(function() {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      var newCat = {
+      var newBurger = {
         name: $("#ca").val().trim(),
         // Get the sleepy value by finding an element with a "name" attribute equal to the string "sleepy" and is checked
-        sleepy: $("[name=sleepy]:checked").val().trim()
+        devoured: $("[name=devoured]:checked").val()
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/burgers", {
         type: "POST",
-        data: newCat
+        data: newBurger
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("created new burger");
           // Rerender the templates with the updated list
           displayPage();
         }
